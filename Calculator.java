@@ -259,23 +259,39 @@ public class Calculator implements ActionListener {
 			DisplayLabel.setText(DisplayLabel.getText()+".");
 		}
 		else if(e.getSource()==btMul) {
-			value=DisplayLabel.getText();
-			DisplayLabel.setText("");
+			if(check==1||check==2||check==3||check==4) {
+				btAnseq.doClick();
+			}else {
+				value=DisplayLabel.getText();
+				DisplayLabel.setText("");
+			}
 			check=1;
 		}
 		else if(e.getSource()==btDiv) {
-			value=DisplayLabel.getText();
-			DisplayLabel.setText("");
+			if(check==1||check==2||check==3||check==4) {
+				btAnseq.doClick();
+			}else {
+				value=DisplayLabel.getText();
+				DisplayLabel.setText("");
+			}
 			check=2;
 		}
 		else if(e.getSource()==btAdd) {
-			value=DisplayLabel.getText();
-			DisplayLabel.setText("");
+			if(check==1||check==2||check==3||check==4) {
+				btAnseq.doClick();
+			}else {
+				value=DisplayLabel.getText();
+				DisplayLabel.setText("");
+			}
 			check=3;
 		}
 		else if(e.getSource()==btSub) {
-			value=DisplayLabel.getText();
-			DisplayLabel.setText("");
+			if(check==1||check==2||check==3||check==4) {
+				btAnseq.doClick();
+			}else {
+				value=DisplayLabel.getText();
+				DisplayLabel.setText("");
+			}
 			check=4;
 		}
 		else if(e.getSource()==btAnseq) {
