@@ -1,8 +1,11 @@
 import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,6 +16,8 @@ public class Calculator implements ActionListener {
 	
 	JFrame jf;
 	JLabel DisplayLabel;
+	Border blackLine=BorderFactory.createLineBorder(Color.BLACK,5);
+	Border blackLine2=BorderFactory.createLineBorder(Color.white);
 	
 	JButton bt7;
 	JButton bt8;
@@ -48,59 +53,79 @@ public class Calculator implements ActionListener {
 		jf.getContentPane().setBackground(Color.darkGray);
 		jf.setLocation(500,150);
 		jf.setVisible(true);
+		jf.setResizable(false);
+		
 		
 		JLabel title=new JLabel("XZ-001");
 		
 		Font f=new Font("Arial",Font.BOLD, 24);
 		Font f2=new Font("DialogInput",Font.BOLD, 32);
 		Font f3=new Font("Arial",Font.BOLD, 16);
+		Font f4=new Font("Arial",Font.BOLD, 32);
 		
-		title.setBounds(238, 5, 100, 20);
+		title.setBounds(226, 3, 58, 26);
+		title.setBorder(blackLine2);
 		title.setForeground(Color.RED);
+		title.setBackground(Color.BLACK);
+		title.setHorizontalAlignment(SwingConstants.CENTER);
+		title.setOpaque(true);
 		title.setFont(f3);
 		jf.add(title);
 		
 		DisplayLabel=new JLabel();
-		DisplayLabel.setBounds(10, 30, 280, 50);
+		DisplayLabel.setBounds(6, 30, 288, 58);
 		jf.add(DisplayLabel);
 		DisplayLabel.setBackground(Color.WHITE);
 		DisplayLabel.setOpaque(true);
+		DisplayLabel.setBorder(blackLine);
 		DisplayLabel.setFont(f2);
 		DisplayLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		DisplayLabel.setForeground(Color.BLACK);
 		
 		bt7=new JButton("7");
 		bt7.setBounds(10, 95, 52, 52);
+		bt7.setBackground(Color.black);
+		bt7.setForeground(Color.white);
 		bt7.setFont(f);
 		jf.add(bt7);
 		bt7.addActionListener(this);
 		
 		bt8=new JButton("8");
 		bt8.setBounds(67, 95, 52, 52);
+		bt8.setBackground(Color.black);
+		bt8.setForeground(Color.white);
 		bt8.setFont(f);
 		jf.add(bt8);
 		bt8.addActionListener(this);
 		
 		bt9=new JButton("9");
 		bt9.setBounds(124, 95, 52, 52);
+		bt9.setBackground(Color.black);
+		bt9.setForeground(Color.white);
 		bt9.setFont(f);
 		jf.add(bt9);
 		bt9.addActionListener(this);
 		
 		bt4=new JButton("4");
 		bt4.setBounds(10, 152, 52, 52);
+		bt4.setBackground(Color.black);
+		bt4.setForeground(Color.white);
 		bt4.setFont(f);
 		jf.add(bt4);
 		bt4.addActionListener(this);
 		
 		bt5=new JButton("5");
 		bt5.setBounds(67, 152, 52, 52);
+		bt5.setBackground(Color.black);
+		bt5.setForeground(Color.white);
 		bt5.setFont(f);
 		jf.add(bt5);
 		bt5.addActionListener(this);
 		
 		bt6=new JButton("6");
 		bt6.setBounds(124, 152, 52, 52);
+		bt6.setBackground(Color.black);
+		bt6.setForeground(Color.white);
 		bt6.setFont(f);
 		jf.add(bt6);
 		bt6.addActionListener(this);
@@ -108,18 +133,24 @@ public class Calculator implements ActionListener {
 		
 		bt1=new JButton("1");
 		bt1.setBounds(10, 209, 52, 52);
+		bt1.setBackground(Color.black);
+		bt1.setForeground(Color.white);
 		bt1.setFont(f);
 		jf.add(bt1);
 		bt1.addActionListener(this);
 		
 		bt2=new JButton("2");
 		bt2.setBounds(67, 209, 52, 52);
+		bt2.setBackground(Color.black);
+		bt2.setForeground(Color.white);
 		bt2.setFont(f);
 		jf.add(bt2);
 		bt2.addActionListener(this);
 		
 		bt3=new JButton("3");
 		bt3.setBounds(124, 209, 52, 52);
+		bt3.setBackground(Color.black);
+		bt3.setForeground(Color.white);
 		bt3.setFont(f);
 		jf.add(bt3);
 		bt3.addActionListener(this);
@@ -134,43 +165,57 @@ public class Calculator implements ActionListener {
 		
 		bt0=new JButton("0");
 		bt0.setBounds(67, 266, 52, 52);
+		bt0.setBackground(Color.black);
+		bt0.setForeground(Color.white);
 		bt0.setFont(f);
 		jf.add(bt0);
 		bt0.addActionListener(this);
 		
 		btDot=new JButton(".");
 		btDot.setBounds(124, 266, 52, 52);
+		btDot.setBackground(Color.black);
+		btDot.setForeground(Color.white);
 		btDot.setFont(f);
 		jf.add(btDot);
 		btDot.addActionListener(this);
 		
 		btMul=new JButton("*");
 		btMul.setBounds(181, 95, 52, 80);
-		btMul.setFont(f);
+		btMul.setBackground(Color.orange);
+		btMul.setForeground(Color.BLACK);
+		btMul.setFont(f4);
 		jf.add(btMul);
 		btMul.addActionListener(this);
 		
-		btDiv=new JButton("/");
+		btDiv=new JButton("÷");
 		btDiv.setBounds(238, 95, 52, 80);
-		btDiv.setFont(f);
+		btDiv.setBackground(Color.orange);
+		btDiv.setForeground(Color.BLACK);
+		btDiv.setFont(f4);
 		jf.add(btDiv);
 		btDiv.addActionListener(this);
 		
 		btAdd=new JButton("+");
 		btAdd.setBounds(181, 182, 52, 80);
+		btAdd.setBackground(Color.orange);
+		btAdd.setForeground(Color.BLACK);
 		btAdd.setFont(f);
 		jf.add(btAdd);
 		btAdd.addActionListener(this);
 		
 		btSub=new JButton("-");
 		btSub.setBounds(238, 182, 52, 80);
-		btSub.setFont(f);
+		btSub.setBackground(Color.orange);
+		btSub.setForeground(Color.BLACK);
+		btSub.setFont(f4);
 		jf.add(btSub);
 		btSub.addActionListener(this);
 		
 		btAnseq=new JButton("=");
 		btAnseq.setBounds(181, 267, 109, 52);
-		btAnseq.setFont(f);
+		btAnseq.setBackground(Color.green);
+		btAnseq.setForeground(Color.BLACK);
+		btAnseq.setFont(f4);
 		jf.add(btAnseq);
 		btAnseq.addActionListener(this);
 	}
